@@ -4,62 +4,15 @@
 
 <h1>Weather</h1>
 <br/>
-<br/>
-<h2>Reading 1</h1>
 
-Date Observed: {{api.0.DateObserved}}<br/>
-Hours Observed: {{api.0.HoursObserved}}<br/>
-Local Time Zone: {{api.0.LocalTimeZone}}<br/>
-Reporting Area: {{api.0.ReportingArea }}<br>
-State Code: {{api.0.StateCode}}<br/>
-Latitude: {{api.0.Latitude}}<br/>
-Longtidue: {{api.0.Longtidue}}<br/>
-Parameter Name: {{api.0.ParameterName}}<br/>
-Air Quality: {{api.0.AQI}}<br/>
-Category: {{api.0.Category.Name }} <br/>
-<br/>
-<br/>
-<h2>Reading 2</h1>
-
-Date Observed: {{api.1.DateObserved}}<br/>
-Hours Observed: {{api.1.HoursObserved}}<br/>
-Local Time Zone: {{api.1.LocalTimeZone}}<br/>
-Reporting Area: {{api.1.ReportingArea}}<br>
-State Code: {{api.1.StateCode}}<br/>
-Latitude: {{api.1.Latitude}}<br/>
-Longtidue: {{api.1.Longtidue}}<br/>
-Parameter Name: {{api.1.ParameterName}}<br/>
-Air Quality: {{api.1.AQI}}<br/>
-Category: {{api.1.Category.Name}}<br/>
-<br/>
-<br/>
-<h2>Reading 3</h1>
-
-Date Observed: {{api.2.DateObserved}}<br/>
-Hours Observed: {{api.2.HoursObserved}}<br/>
-Local Time Zone: {{api.2.LocalTimeZone}}<br/>
-Reporting Area: {{api.2.ReportingArea}}<br>
-State Code: {{api.2.StateCode}}<br/>
-Latitude: {{api.2.Latitude}}<br/>
-Longtidue: {{api.2.Longtidue}}<br/>
-Parameter Name: {{api.2.ParameterName}}<br/>
-Air Quality: {{api.2.AQI}}<br/>
-Category: {{api.2.Category.Name}}<br/>
-<br>
-
-{{ api.3 }}
-
-Date Observed: {{api.3.DateObserved}}<br/>
-Hours Observed: {{api.3.HoursObserved}}<br/>
-Local Time Zone: {{api.3.LocalTimeZone}}<br/>
-Reporting Area: {{api.3.ReportingArea}}<br>
-State Code: {{api.3.StateCode}}<br/>
-Latitude: {{api.3.Latitude}}<br/>
-Longtidue: {{api.3.Longtidue}}<br/>
-Parameter Name: {{api.3.ParameterName}}<br/>
-Air Quality: {{api.3.AQI}}<br/>
-Category: {{api.3.Category.Name}}<br/>
-<
-
+{% if api %}
+	{% if api == "Error..."%}
+		There was an error, please try again...
+	{% else %}
+		Air Quality: {{api.0.AQI}}<br/>
+		Area: {{api.0.ReportingArea }}<br>
+		Category: {{api.0.Category.Name }} <br/>
+	{% endif %}
+{% endif %}
 
 {% endblock %}
